@@ -1,0 +1,106 @@
+﻿
+h1 {
+    font-family: 'Exo 2', sans-serif;
+    text-align: center;
+    padding-top: 1em;
+    font-weight: 400;
+    color: #2B2B36;
+    font-size: 2em;
+}
+
+#displayAllTable tbody tr:hover {
+    background-color: white;
+    cursor: pointer;
+}
+
+#displayAllTable thead tr th:hover {
+    background-color: white;
+    cursor: pointer;
+}
+
+.chooseTableLine {
+    background-color: white;
+}
+
+table {
+    background-color: aliceblue;
+}
+
+.inputTable {
+    text-align: left;
+    font-size:18px;
+    width: 80%;
+    margin-left:10px;
+}
+    .inputTable td {
+        padding: 12px;
+    }
+
+.saveButton {
+    margin-left: 30%;
+}
+
+.dealDiv input[type="text"] {
+    width: 70%;
+    padding: 2px;
+    color: #9199aa;
+    font-size: 18px;
+    background: none;
+    border: solid;
+    font-weight: 100;
+    border-bottom: 1px solid#484856;
+    margin-top: 0;
+}
+
+.searchTexts {
+background-color:gainsboro;
+}
+
+    .searchTexts input[type="text"], .searchTexts select, .searchTexts input[type="data"] {
+        width: 100%;
+        padding: 0;
+        color: #9199aa;
+        font-weight: 400;
+        font-size: 12px;
+        outline: none;
+        background: none;
+        background-color: aliceblue;
+        border: solid 2px;
+        margin: 0;
+    }
+
+
+.button {
+    width: 80px;
+    line-height: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 1px 1px 1px #333;
+    border-radius: 5px;
+    margin: 0 10px 10px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+    .button:nth-child(6n) {
+        margin-right: 0;
+    }
+
+    .button {
+        color: #8c96a0;
+        text-shadow: 1px 1px 1px #fff;
+        border: 1px solid #dce1e6;
+        box-shadow: 0 1px 2px #fff inset,0 -1px 0 #a8abae inset;
+        background: -webkit-linear-gradient(top,#f2f3f7,#e4e8ec);
+        background: -moz-linear-gradient(top,#f2f3f7,#e4e8ec);
+        background: linear-gradient(top,#f2f3f7,#e4e8ec);
+    }
+
+.validation {
+    color: aliceblue;
+}
+
+.validationDisplay {
+    color:red;
+}
