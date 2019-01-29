@@ -10,8 +10,8 @@ export class UpdateEmployee extends React.Component {
 
     constructor(props) {
         super(props);
-        const { state } = this.props.location;
-        const employee = state.employee;
+        const param = this.props.location.state;
+        const employee = param.employee;
         this.state = {
             id: employee.id,
             firstName: employee.firstName,

@@ -15,14 +15,11 @@ export class Employee extends Component {
             employees: [],
             loading: true,
             ChooseTableIndex: -1,
-            ChooseEmployee: null,
-            IsSortDesc: false,              
+            ChooseEmployee: null,         
             sortBy: "id",
             sortByHistory: null,
             onePageDataNum:4,
         };
-
-
 
         fetch('api/Employee/DisplayAllEmployees')
             .then(response => response.json())
@@ -107,15 +104,8 @@ export class Employee extends Component {
             });
     }
 
-    sortRole(propertyName, IsSortDesc) {
+    sortRole(propertyName) {
         if ((typeof this.state.displayEmployees[0][propertyName]) != "number") {
-            if (IsSortDesc) {
-                return function (object1, object2) {
-                    var value1 = object1[propertyName];
-                    var value2 = object2[propertyName];
-                    return value2.localeCompare(value1);
-                }
-            }
             return function (object1, object2) {
                 var value1 = object1[propertyName];
                 var value2 = object2[propertyName];
@@ -123,13 +113,6 @@ export class Employee extends Component {
             }
         }
         else {
-            if (IsSortDesc) {
-                return function (object1, object2) {
-                    var value1 = object1[propertyName];
-                    var value2 = object2[propertyName];
-                    return value2 - value1;
-                }
-            }
             return function (object1, object2) {
                 var value1 = object1[propertyName];
                 var value2 = object2[propertyName];
@@ -139,15 +122,18 @@ export class Employee extends Component {
     }
 
     sortEmployee(sortBy) {
-        let employees = this.state.employees;
+        let employees = this.state.employees.slice();
         const sortByHistory = this.state.sortBy;
-        let IsSortDesc = this.state.IsSortDesc;
-        if (sortByHistory == sortBy) { IsSortDesc = !IsSortDesc; }
-        else { IsSortDesc = false; }
-        employees = employees.sort(this.sortRole(sortBy, IsSortDesc));
+
+        if (sortByHistory == sortBy) {
+            employees = employees.reverse();
+        }
+        else {
+            employees = employees.sort(this.sortRole(sortBy));
+        }
+
         this.setState({
             employees: employees,
-            IsSortDesc: IsSortDesc, 
             sortBy: sortBy,
             sortByHistory: sortByHistory,
             ChooseTableIndex: -1,
